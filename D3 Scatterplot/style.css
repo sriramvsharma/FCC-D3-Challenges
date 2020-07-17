@@ -1,0 +1,87 @@
+/* Custom Style  */
+html {
+  background-color: #EFECEA;
+  font-family: Roboto;
+  text-align: center;
+  transition: all .2s;
+}
+
+text{
+font-family: sans-serif;  
+}
+
+.tick text {
+font-size: 1.5em;
+  fill: #635F5D;
+}
+
+.tick line {
+stroke: #C0C0BB;
+opacity: .4
+}
+
+#y-axis path {
+ /* stroke: none;  */
+  
+}
+
+#x-axis path {
+ /* stroke: none;  */
+}
+
+.container {
+  background-color: #F5F3F2;
+  box-shadow: 0 0 15px #5c5c5c;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  min-width: 350px;
+  min-height: 200px;
+  width: 60vw;
+}
+
+.title {
+  font-size: 4vw;
+  color: #635F5D;
+}
+
+.tooltip {
+  background-color: steelblue;
+  border-radius: 30%;
+  padding: 10px;
+  position: absolute;
+  width: 100px;
+  color: white;
+  font-size: 1.1vw;
+}
+
+.circle {
+  fill: steelblue;
+  overflow: hidden;
+}
+.bar:hover {
+  cursor: pointer;
+  fill: orange;
+}
+.x-axis-label, 
+.y-axis-label {
+  font-size: 2vw;
+  fill: #635F5D
+}
+
+.footer {
+font-size: .9vw;
+color: #635F5D;
+ text-align: right;
+}
+
+.legend-label {
+font-size:15px;
+font-weight:bold;
+text-anchor:middle;
+fill: #635F5D;
+}
+
