@@ -1,3 +1,18 @@
+const toolTipContent = function(d) {			
+  //we'll first add/update the data-year attribute to complete the user story...
+  document.getElementById("tooltip").setAttribute("data-year", d.year );
+  // ... then we'll update the color of the div dynamically to match the cell color...
+  document.getElementById("tooltip").style.background = colorScale(baseTemp + d.variance);
+  // ... and finally generate and return the HTML content:
+  const monthYear = d3.timeFormat("%B %Y")(new Date(d.year, d.month - 1, 1)); // minus 1 to zero-index the month value from our dataset
+  let temp = (baseTemp + d.variance).toFixed(2) + "°C";
+  return monthYear + "<br/>" + temp;
+};
+
+d3.html( (d) => toolTipContent(d) ) 
+
+
+
 const width = 900;
 const height = 600;
 const padding = 80;
