@@ -1,0 +1,22 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+form {
+  font-family: sans-serif;
+}
+
+svg {
+  font: 10px sans-serif;
+}
+
+#tooltip {
+  background-color: steelblue;
+  border-radius: 10%;
+  padding: 10px;
+  position: absolute;
+  width: 130px;
+  color: white;
+  font-size: .9em;
+}
