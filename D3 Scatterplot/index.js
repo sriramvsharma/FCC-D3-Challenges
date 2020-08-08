@@ -13,8 +13,8 @@ d3.html( (d) => toolTipContent(d) )
 
 
 
-const width = 900;
-const height = 600;
+const width = window.innerWidth;
+const height = window.innerHeight  - (window.innerHeight * 5/100);
 const padding = 80;
 const margin = {top: 10, right: 100, bottom: 35, left: 110}
 const innerWidth = width - margin.left - margin.right; //You'll find a lot of these VA's (Value Accessors) in the code. VA's prevent repetitive code. 
@@ -35,7 +35,8 @@ const tooltip = d3
   
   const svg = d3.select(".chart")
     .append("svg") // Adding an svg node to the chart div class. 
-   .attr("viewBox", `0 0 ${width} ${height}`) // this makes the viz responsive. 
+   .attr("viewBox", `0 0 ${width} ${height}`) // this makes the viz responsive.
+   .attr('preserveAspectRatio','xMinYMin')  
 
   const xScale = d3.scaleLinear() //Step 3: Use linear and band scales. 
   .domain([d3.min(data, d => d[4])-1, d3.max(data, d => d[4])+1])//input information
