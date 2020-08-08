@@ -6,6 +6,17 @@ html {
   transition: all .2s;
 }
 
+body {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: 0px;
+}
+
+
+
 text{
 font-family: sans-serif;  
 }

@@ -1,7 +1,7 @@
-const width = 900;
-const height = 600;
-const padding = 80;
-const margin = {top: 10, right: 100, bottom: 35, left: 110}
+const width = document.body.clientWidth;
+const height = document.body.clientHeight;
+const padding = 110;
+const margin = {top: 10, right: 100, bottom: 85, left: 110}
 const innerWidth = width - margin.left - margin.right; //You'll find a lot of these VA's (Value Accessors) in the code. VA's prevent repetitive code. 
 const dataURL = 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json'
 const xAxisLabel = 'Year'
@@ -17,7 +17,9 @@ const tooltip = d3
   
   const svg = d3.select(".chart")
     .append("svg") // Adding an svg node to the chart div class. 
-   .attr("viewBox", `0 0 ${width} ${height}`) // this makes the viz responsive. 
+   .attr("viewBox", `0 0 ${width} ${height}`) // this makes the viz responsive.
+  //  .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+   .attr('preserveAspectRatio','xMinYMin') 
 
   
   const xScale = d3.scaleTime() //Step 3: Use linear and band scales. 
@@ -121,3 +123,4 @@ d3.json(dataURL) //Step 1: Get the json data.
   render(dataset)
 })
 
+// window.addEventListener('resize', render);
