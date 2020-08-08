@@ -1,8 +1,9 @@
 const width = document.body.clientWidth;
-const height = document.body.clientHeight;
-const padding = 110;
+const height = document.body.clientHeight - document.body.clientHeight * 5/100;
+const padding = 100;
 const margin = {top: 10, right: 100, bottom: 85, left: 110}
 const innerWidth = width - margin.left - margin.right; //You'll find a lot of these VA's (Value Accessors) in the code. VA's prevent repetitive code. 
+const innerHeight = height - margin.left - margin.right; //You'll find a lot of these VA's (Value Accessors) in the code. VA's prevent repetitive code. 
 const dataURL = 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json'
 const xAxisLabel = 'Year'
 const yAxisLabel = 'Billions $ (USD)'
@@ -43,7 +44,7 @@ const tooltip = d3
         //passing in this selection along with any optional arguments.
         // https://devdocs.io/d3~5/d3-selection#selection_call
       svg.append("g")
-        .attr("transform", `translate(${(padding * 3)/2}, 0)`)
+        .attr("transform", `translate(${(padding * 3)/2}, padding)`)
         .attr("id","y-axis")
         .call(yAxis);
 
@@ -53,7 +54,7 @@ const tooltip = d3
         .attr('transform', `translate(${padding / 2}, 0)`)
         .append('text')
         .attr('x', width / 2 - padding)
-        .attr('y', height - padding / 6)
+        .attr('y', height - padding / 2)
         .attr('class', 'x-axis-label')
         .text(xAxisLabel);
   
@@ -65,7 +66,7 @@ const tooltip = d3
  //  Otherwise, the line would render along the border
  //  of SVG canvas and wouldn't be visible.
 
-      .attr('transform', `translate(${padding},${height/2})`)         //positioning an axis needs translate. When it's applied to the g element, it moves the whole group over and down by the given amounts
+      .attr('transform', `translate(${padding/2},${height/2})`)         //positioning an axis needs translate. When it's applied to the g element, it moves the whole group over and down by the given amounts
       .append('text')
       .attr('class', 'y-axis-label')
       .attr('text-anchor', 'middle')
