@@ -1,6 +1,10 @@
 body {
   margin: 0px;
   overflow: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
 }
 
 form {
@@ -19,4 +23,16 @@ svg {
   width: 130px;
   color: white;
   font-size: .9em;
+}
+
+#title {
+  font-size: 2.5em;
+  text-shadow: .04em .05em .05em #EFECEA;
+  font-family: ITC Franklin Gothic Std, Book Condensed with Demi Condensed;
+  text-align: center;
+}
+
+#description {
+  font-family: ITC Franklin Gothic Std, Book Condensed with Demi Condensed;
+  text-align: center;
 }
